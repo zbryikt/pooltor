@@ -6,11 +6,11 @@ torpool = (opt = {}) ->
   @
 
 torpool.prototype = Object.create(Object.prototype) <<< do
-  fetch: ({url}) ->
+  fetch: (opt = {}) ->
     tor-request.setTorAddress '127.0.0.1', @ports[@ptr]
     @ptr = (@ptr + 1) % @ports.length
     (res, rej) <- new Promise _
-    (e, r, b) <- tor-request.request url, _
+    (e, r, b) <- tor-request.request opt, _
     if e => rej e else res b
 
 module.exports = torpool

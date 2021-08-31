@@ -8,13 +8,12 @@
     return this;
   };
   torpool.prototype = import$(Object.create(Object.prototype), {
-    fetch: function(arg$){
-      var url;
-      url = arg$.url;
+    fetch: function(opt){
+      opt == null && (opt = {});
       torRequest.setTorAddress('127.0.0.1', this.ports[this.ptr]);
       this.ptr = (this.ptr + 1) % this.ports.length;
       return new Promise(function(res, rej){
-        return torRequest.request(url, function(e, r, b){
+        return torRequest.request(opt, function(e, r, b){
           if (e) {
             return rej(e);
           } else {
