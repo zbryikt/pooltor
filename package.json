@@ -1,0 +1,21 @@
+{
+  "name": "pooltor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "livescript": "^1.6.0"
+  },
+  "dependencies": {
+    "tor-request": "^3.1.0"
+  }
+}
