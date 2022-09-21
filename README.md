@@ -4,6 +4,12 @@ fetch data using tor network
 
 ## usage
 
+Need to have `tor` installed and running first:
+
+    brew install tor
+    # use following ports: 9050, 9052, 9053, 9054
+    tor +SocksPort 9050 +SocksPort 9052 +SocksPort 9053 +SocksPort 9054
+
     plt = new pooltor ports: [9050 9052 9053 9054]
     opt = {
       url: url
